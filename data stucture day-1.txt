@@ -1,0 +1,170 @@
+1)class Node:
+  def _init_(self,data):
+    self.data=data
+    self.next=None
+class SLL:
+  def _init_(self):
+    self.head=None
+  def display(self):
+    if self.head is None:
+      print("LL is empty")
+    else:
+      temp=self.head
+      while(temp):
+        print(temp.data,"==>",end=' ')
+        temp=temp.next
+obj=SLL()
+n1=Node(100)
+obj.head=n1
+n2=Node(200)
+obj.head.next=n2
+n3=Node(300)
+n2.next=n3
+n4=Node(400)
+n3.next=n4
+obj.display()
+
+output:
+100 ==> 200 ==> 300 ==> 400 ==>
+
+
+2)class Node:
+  def _init_(self,data):
+    self.data=data
+    self.next=None
+class SLL:
+  def _init_(self):
+    self.head=None
+  def insert_begining(self,data):
+    nb=Node(data)
+    nb.next=self.head
+    self.head=nb   
+  def display(self):
+    if self.head is None:
+      print("LL is empty")
+    else:
+      temp=self.head
+      while(temp):
+        print(temp.data,"==>",end=' ')
+        temp=temp.next
+obj=SLL()
+n=Node(10)
+obj.head=n
+n1=Node(20)
+n.Next=n1
+n2=Node(30)
+n1.next=n2
+n3=Node(40)
+n2.next=n3
+print("before inserting 100")
+obj.display()
+print(" ")
+print("after adding 100")
+obj.insert_begining(100)
+obj.display()
+print(" ")
+print("after adding 555")
+obj.insert_begining(555)
+obj.display()
+
+
+output:
+before inserting 100
+10 ==>  
+after adding 100
+100 ==> 10 ==>  
+after adding 555
+555 ==> 100 ==> 10 ==>
+
+
+3)class Node:
+  def _init_(self,data):
+    self.data=data
+    self.next=None
+class SLL:
+  def _init_(self):
+    self.head=None
+  def insert_end(self,data):
+    ne=Node(data)
+    temp=self.head
+    while temp.next:
+      temp=temp.next
+    temp.next=ne   
+  def display(self):
+    if self.head is None:
+      print("LL is empty")
+    else:
+      temp=self.head
+      while(temp):
+        print(temp.data,"==>",end=' ')
+        temp=temp.next
+obj=SLL()
+n=Node(10)
+obj.head=n
+n1=Node(20)
+n.Next=n1
+n2=Node(30)
+n1.next=n2
+n3=Node(40)
+n2.next=n3
+print("before inserting 100")
+obj.display()
+print(" ")
+print("after adding 100")
+obj.insert_end(100)
+obj.display()
+print(" ")
+print("after adding 555")
+obj.insert_end(555)
+obj.display()
+
+output:
+before inserting 100
+10 ==>  
+after adding 100
+10 ==> 100 ==>  
+after adding 555
+10 ==> 100 ==> 555 ==>
+
+4)class Node:
+  def _init_(self,data):
+    self.data=data
+    self.next=None
+class singlelinkedlist:
+  def _init_(self):
+    self.head=None
+  def insert_position(self,pos,data):
+    np=Node(data)
+    temp=self.head
+    for i in range(pos-1):
+      temp=temp.next
+    np.next=temp.next
+    temp.next=np
+  def display(self):
+    if self.head is None:
+      print("linked list is empty")
+    else:
+      temp=self.head
+      while temp:
+        print(temp.data,"==>>",end=" ")
+        temp=temp.next
+obj=singlelinkedlist()
+n=Node(10)
+obj.head=n
+n1=Node(20)
+n.next=n1
+n2=Node(30)
+n1.next=n2
+n3=Node(40)
+n2.next=n3
+n4=Node(50)
+n3.next=n4
+obj.display()
+print()
+obj.insert_position(2,1000)
+obj.display()
+
+
+output:
+10 ==>> 20 ==>> 30 ==>> 40 ==>> 50 ==>> 
+10 ==>> 20 ==>> 1000 ==>> 30 ==>> 40 ==>> 50 ==>>
